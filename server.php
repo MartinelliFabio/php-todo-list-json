@@ -1,5 +1,10 @@
 <?php
-    $todo = $_POST['todo'];
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: X-Requested-With");
 
-    header('Content-Type: application/json');
-    echo json_encode($todo);
+$file_text = file_get_contents('./data.json');
+$list = json_decode($file_text); 
+
+header('Content-Type: application/json');
+echo json_encode($list);
+    

@@ -17,7 +17,7 @@
             <h1>TodoList</h1>
             <div>
                 <ul>
-                    <li v-for="(item, index) in list">{{ item }}</li>
+                    <li v-for="(item, index) in list" class="todo" :class="item.done ? 'done' : ''">{{ item.text }}</li>
                 </ul>
             </div>
             <input type="text" v-model="newTask">
