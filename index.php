@@ -14,7 +14,14 @@
 <body>
     <div id="app">
         <div class="container">
-            {{ provaMessage }}
+            <h1>TodoList</h1>
+            <div>
+                <ul>
+                    <li v-for="(item, index) in list">{{ item }}</li>
+                </ul>
+            </div>
+            <input type="text" v-model="newTask">
+            <button class="btn btn-primary" @click='send()'>Invia</button>
         </div>
     </div>
 </body>
