@@ -41,6 +41,19 @@ const app = createApp({
                     // console.log(response.data);
                     this.getList();
             });
+        },
+        deleteTask(i) {
+            const data = {
+                index: i
+            };
+            axios.post(
+                'server.php?delete',
+                data,
+                {headers: {'Content-Type': 'multipart/form-data'}}
+            ).then((response) => {
+                    // console.log(response.data);
+                    this.getList();
+            });
         }
     },
     mounted() {
