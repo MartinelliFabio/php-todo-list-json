@@ -43,6 +43,10 @@ ul {
     padding: 0;
 }
 
+li {
+    cursor: pointer;
+}
+
 .icon {
     background-color: red;
     padding: 7px;
@@ -60,8 +64,8 @@ input {
 
 .button {
     background: transparent;
-    border: 1px solid #a58515;
-    color: #a58515;
+    border: 1px solid yellow;
+    color: yellow;
     padding: 4px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

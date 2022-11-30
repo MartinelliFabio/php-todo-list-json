@@ -28,6 +28,19 @@ const app = createApp({
             axios.get('server.php').then((res) => {
                 this.list = [...res.data];
             })
+        },
+        taskDone(i) {
+            const data = {
+                index: i
+            };
+            axios.post(
+                'server.php?done',
+                data,
+                {headers: {'Content-Type': 'multipart/form-data'}}
+            ).then((response) => {
+                    // console.log(response.data);
+                    this.getList();
+            });
         }
     },
     mounted() {
