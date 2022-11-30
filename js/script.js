@@ -5,13 +5,23 @@ const app = createApp({
         return{
             newTask: '',
             list: [],
-            
         }
     },
     methods: {
         send() {
-            axios.post('server.php', {'todo': this.newTask}, {headers: {'Content-Type': 'multipart/form-data'}}).then((response) => {
-                this.list.unshift(response.data);
+            const data = {
+                newTask: this.newTask,
+            }
+            axios.post(
+                'server.php',
+                data, 
+                {headers: {'Content-Type': 'multipart/form-data'}}
+            ).then((response) => {
+                console.log(response.data);
+
+                this.getList();
+
+                this.newTask = '';
             });
         },
         getList() {
