@@ -34,7 +34,7 @@ const app = createApp({
                 index: i
             };
             axios.post(
-                'server.php?done',
+                'server.php',
                 data,
                 {headers: {'Content-Type': 'multipart/form-data'}}
             ).then((response) => {
@@ -44,10 +44,10 @@ const app = createApp({
         },
         deleteTask(i) {
             const data = {
-                index: i
+                indexDelete: i
             };
             axios.post(
-                'server.php?delete',
+                'server.php',
                 data,
                 {headers: {'Content-Type': 'multipart/form-data'}}
             ).then((response) => {

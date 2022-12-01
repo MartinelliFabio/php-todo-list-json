@@ -18,22 +18,27 @@ if(isset($_POST['newTask'])) {
 
     file_put_contents($file_url, json_encode($list));
 
-} else if(isset($_POST['index']) && isset($_GET['done'])) {
+} else if(isset($_POST['index'])) {
 
-    $i = intval($_POST['index']);
-    $list[$i]->done = !$list[$i]->done;
+    $todoIndex = $_POST['index'];
+
+    $list[$todoIndex]->done = !$list[$todoIndex]->done;
+
     file_put_contents($file_url, json_encode($list));
     
 
-} else if(isset($_POST['index']) && isset($_GET['delete'])) {
+} else if(isset($_POST['indexDelete'])) {
 
-    $i = intval($_POST['index']);
-    array_splice($list, $i, 1);
+    $todoIndex = $_POST['indexDelete'];
+
+    array_splice($list, $todoIndex, 1);
+
     file_put_contents($file_url, json_encode($list));
 
 } else {
 
     header('Content-Type: application/json');
+    
     echo json_encode($list);
 
 }
