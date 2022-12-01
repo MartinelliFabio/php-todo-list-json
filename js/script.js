@@ -17,7 +17,7 @@ const app = createApp({
                 data, 
                 {headers: {'Content-Type': 'multipart/form-data'}}
             ).then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
 
                 this.getList();
 
